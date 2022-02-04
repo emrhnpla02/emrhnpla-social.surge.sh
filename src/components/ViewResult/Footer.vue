@@ -28,6 +28,11 @@
         01/31/22: discord came back to the party! i hate discord but i also need
         it so it'll be with us for a while.
       </p>
+      <p>
+        <a href="https://emrhnpla02.github.io/epfetch-website/"
+          >https://emrhnpla02.github.io/epfetch-website/</a
+        >
+      </p>
     </div>
   </div>
 </template>
