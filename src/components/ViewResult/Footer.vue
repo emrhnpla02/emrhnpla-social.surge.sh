@@ -5,7 +5,7 @@
         This static website made by @emrhnpla02 in 1 day. This is not a personal
         website, just some kind of a linktree alternative but only i can use
       </p>
-      <p>
+      <!-- <p>
         Actually i started this project to make a alternative website to
         linktree or something like that but when it comes to responsive design
         and other boring stuffs... i was bored then i decided to make this
@@ -27,7 +27,7 @@
       <p>
         01/31/22: discord came back to the party! i hate discord but i also need
         it so it'll be with us for a while.
-      </p>
+      </p> -->
       <p>
         <a href="https://emrhnpla02.github.io/epfetch-website/"
           >https://emrhnpla02.github.io/epfetch-website/</a
