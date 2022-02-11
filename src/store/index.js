@@ -67,6 +67,7 @@ export default createStore({
         websiteName: "Lemmy",
         userHref: "https://lemmy.ml/u/emrhnpla02",
         username: "emrhnpla02",
+        isBased: true,
       },
       {
         websiteIcon: "fab fa-mastodon",
@@ -75,6 +76,7 @@ export default createStore({
         websiteName: "Mastodon",
         userHref: "https://mastodon.social/web/@emrhnpla02",
         username: "@emrhnpla02@mastodon.social",
+        isBased: true,
       },
       {
         websiteIcon: "fab fa-github",
@@ -83,6 +85,7 @@ export default createStore({
         websiteName: "Github",
         userHref: "https://github.com/emrhnpla02",
         username: "emrhnpla02",
+        isBased: true,
       },
       {
         websiteIcon: "fab fa-medium-m",
@@ -91,6 +94,7 @@ export default createStore({
         websiteName: "Matrix",
         userHref: "https://matrix.to/#/@emrhnpla02:matrix.org",
         username: "@emrhnpla02",
+        isBased: true,
       },
       {
         websiteIcon: "fab fa-discord",
@@ -99,6 +103,7 @@ export default createStore({
         websiteName: "Discord",
         userHref: "https://discord.com/users/762040630099574784",
         username: "emrhnpla02#5625",
+        isBased: false,
       },
       {
         websiteIcon: "fab fa-steam",
@@ -107,6 +112,7 @@ export default createStore({
         websiteName: "Steam",
         userHref: "https://steamcommunity.com/id/emrhnpla02/",
         username: "emrhnpla02",
+        isBased: false,
       },
     ],
   },
