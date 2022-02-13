@@ -7,7 +7,7 @@
       :key="link.websiteName"
       class="card mb-3 column is-5-fullhd is-12 is-12-mobile"
     >
-      <div class="card-header">
+      <div class="card-header is-relative">
         <div class="card-header-title is-flex is-justify-content-center">
           <a
             class="is-flex is-align-items-center"
@@ -21,6 +21,12 @@
             ></i>
             <span class="title">{{ link.websiteName }}</span>
           </a>
+        </div>
+        <div class="tags has-addons has-text-weight-bold">
+          <span class="tag">based?</span>
+          <span class="tag is-primary">
+            {{ link.isBased ? "√" : "X" }}
+          </span>
         </div>
       </div>
       <div class="card-content is-flex is-flex-direction-column">
@@ -74,3 +80,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+div.tags {
+  position: absolute;
+  right: 0rem;
+}
+div.tags span.tag {
+  margin-bottom: 0;
+}
+</style>
