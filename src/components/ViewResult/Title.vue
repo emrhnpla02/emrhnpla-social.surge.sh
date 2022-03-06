@@ -1,7 +1,6 @@
 <template>
   <p class="title p-2 has-text-light has-background-primary">
-    <span class="mr-2">i hate frontend</span>
-    <i class="far fa-tired"></i>
+    <img src="https://media.giphy.com/media/UrzWDQ3VTiDU84R5dx/giphy.gif" />
   </p>
 </template>
 
@@ -9,5 +8,8 @@
 p.title {
   border-radius: 5px 5px 0 0;
   border-bottom: 1px solid darkgray;
+}
+p.title img {
+  width: 50px;
 }
 </style>
