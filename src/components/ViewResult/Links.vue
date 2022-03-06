@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="columns is-flex is-justify-content-space-evenly is-flex-wrap-wrap"
-  >
+  <div class="columns is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
     <div
       v-for="link in this.$store.state.links"
       :key="link.websiteName"
@@ -9,11 +7,7 @@
     >
       <div class="card-header is-relative">
         <div class="card-header-title is-flex is-justify-content-center">
-          <a
-            class="is-flex is-align-items-center"
-            :href="link.websiteHref"
-            target="_blank"
-          >
+          <a class="is-flex is-align-items-center" :href="link.websiteHref" target="_blank">
             <i
               class="fa-2x mr-2"
               :class="link.websiteIcon"
@@ -24,26 +18,16 @@
         </div>
         <div class="tags has-addons has-text-weight-bold">
           <span class="tag">based?</span>
-          <span class="tag is-primary">
-            {{ link.isBased ? "√" : "X" }}
-          </span>
+          <span class="tag is-primary">{{ link.isBased ? "√" : "X" }}</span>
         </div>
       </div>
       <div class="card-content is-flex is-flex-direction-column">
         <div class="mb-3">
-          <span class="mr-2">{{ link.username }}</span
-          ><i
-            class="far fa-copy is-clickable"
-            style="color: #00d1b2"
-            @click="copyToClipboard"
-          ></i>
+          <span class="mr-2">{{ link.username }}</span>
+          <i class="far fa-copy is-clickable" style="color: #00d1b2" @click="copyToClipboard"></i>
         </div>
         <div>
-          <a
-            :href="link.userHref"
-            target="_blank"
-            class="button is-medium is-fullwidth is-primary"
-          >
+          <a :href="link.userHref" target="_blank" class="button is-medium is-fullwidth is-primary">
             <i class="fas fa-lg fa-external-link-alt mr-2"></i>
             <span>goto!</span>
           </a>
