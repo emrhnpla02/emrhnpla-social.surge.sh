@@ -1,5 +1,7 @@
 <template>
-  <div class="columns is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
+  <div
+    class="columns is-flex is-justify-content-space-evenly is-flex-wrap-wrap"
+  >
     <div
       v-for="link in this.$store.state.links"
       :key="link.websiteName"
@@ -7,29 +9,36 @@
     >
       <div class="card-header is-relative">
         <div class="card-header-title is-flex is-justify-content-center">
-          <a class="is-flex is-align-items-center" :href="link.websiteHref" target="_blank">
-            <i
-              class="fa-2x mr-2"
-              :class="link.websiteIcon"
-              :style="{ color: link.websiteIconColor }"
-            ></i>
+          <a
+            class="is-flex is-align-items-center has-text-dark"
+            :href="link.websiteHref"
+            target="_blank"
+          >
+            <Icon :icon="link.websiteIcon" width="35" class="mr-4" />
             <span class="title">{{ link.websiteName }}</span>
           </a>
-        </div>
-        <div class="tags has-addons has-text-weight-bold">
-          <span class="tag">based?</span>
-          <span class="tag is-primary">{{ link.isBased ? "√" : "X" }}</span>
         </div>
       </div>
       <div class="card-content is-flex is-flex-direction-column">
         <div class="mb-3">
           <span class="mr-2">{{ link.username }}</span>
-          <i class="far fa-copy is-clickable" style="color: #00d1b2" @click="copyToClipboard"></i>
+          <Icon
+            icon="ci:copy"
+            width="20"
+            class="is-clickable mr-2"
+            style="color: #00d1b2"
+            @click="() => copyToClipboard(link.websiteName)"
+          />
         </div>
         <div>
-          <a :href="link.userHref" target="_blank" class="button is-medium is-fullwidth is-primary">
-            <i class="fas fa-lg fa-external-link-alt mr-2"></i>
-            <span>goto!</span>
+          <a
+            :href="link.userHref"
+            :ref="link.websiteName"
+            target="_blank"
+            class="button is-medium is-fullwidth is-primary"
+          >
+            <Icon icon="akar-icons:link-out" width="20" class="mr-2" />
+            <span>visit link</span>
           </a>
         </div>
       </div>
@@ -38,39 +47,31 @@
 </template>
 
 <script>
+import { Icon } from "@iconify/vue";
+
 export default {
+  components: {
+    Icon,
+  },
   methods: {
-    copyToClipboard(e) {
+    copyToClipboard(ref) {
+      const handleNotf = (id) => {
+        this.$store.state[id] = true;
+        setTimeout(() => {
+          const toast = document.querySelector(`#${id}`);
+          toast.classList.remove("animate__bounceInUp");
+          toast.classList.add("animate__fadeOutDown");
+          setTimeout(() => {
+            this.$store.state[id] = false;
+          }, 2000);
+        }, 3000);
+      };
+
       navigator.clipboard
-        .writeText(e.target.parentElement.nextElementSibling.children[0].href)
-        .then(() => {
-          this.$store.state.copySuccess = true;
-          setTimeout(() => {
-            document.querySelector(".successNotf").classList =
-              "notification succesNotf is-primary animate__animated animate__fadeOutDown";
-            setTimeout(() => {
-              this.$store.state.copySuccess = false;
-            }, 2000);
-          }, 3000);
-        })
-        .catch((err) => {
-          console.error(err);
-          this.$store.state.copyError = true;
-          setTimeout(() => {
-            this.$store.state.copyError = false;
-          }, 3000);
-        });
+        .writeText(this.$refs[ref][0].href)
+        .then(() => handleNotf("copySuccess"))
+        .catch(() => handleNotf("copyError"));
     },
   },
 };
 </script>
-
-<style scoped>
-div.tags {
-  position: absolute;
-  right: 0rem;
-}
-div.tags span.tag {
-  margin-bottom: 0;
-}
-</style>

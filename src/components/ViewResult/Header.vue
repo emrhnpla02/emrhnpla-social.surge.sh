@@ -14,7 +14,7 @@
     >
       <p class="name">{{ user.name }}</p>
       <p class="username">{{ user.email }}</p>
-      <p class="about mb-5">
+      <p class="about mb-5 px-2">
         {{ user.about }}
       </p>
     </div>
@@ -30,41 +30,27 @@
       >
         Most Used Platforms
       </p>
-      <div class="is-flex is-flex-direction-column is-align-items-center mt-2">
-        <div>
-          <span class="tag is-large is-rounded"
-            ><img src="../../assets/icons/elementio.svg" width="25" />
-          </span>
-          <span class="tag is-large is-rounded"
-            ><img src="../../assets/icons/protonmail.svg" width="25" />
-          </span>
-          <span class="tag is-large is-rounded">
-            <img src="../../assets/icons/lemmy.webp" width="25" />
-          </span>
-        </div>
-        <div>
-          <span class="tag is-large is-rounded" style="color: #3088d4"
-            ><i class="fab fa-lg fa-mastodon"></i
-          ></span>
-          <span class="tag is-large is-rounded" style="color: #303443"
-            ><i class="fab fa-lg fa-github"></i
-          ></span>
-          <span class="tag is-large is-rounded" style="color: #fe4400">
-            <i class="fab fa-lg fa-reddit"></i
-          ></span>
-        </div>
+      <div class="is-flex is-justify-content-center is-align-items-center mt-6">
+        <Icon icon="logos:github-icon" width="35" />
+        <Icon icon="cib:matrix" class="mx-6" width="35" />
+        <Icon icon="logos:spotify-icon" width="35" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { Icon } from "@iconify/vue";
+
 export default {
   data() {
     return {
       user: this.$store.state.user,
       isMobile: false,
     };
+  },
+  components: {
+    Icon,
   },
   computed: {
     disableHeaderLeftBorderOnMobile() {
