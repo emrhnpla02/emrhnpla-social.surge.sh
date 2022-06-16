@@ -19,11 +19,11 @@ export default createStore({
         username: "@emrhnpla02",
       },
       {
-        websiteIcon: "logos:mastodon-icon",
-        websiteHref: "https://mastodon.social/web/home",
-        websiteName: "Mastodon",
-        userHref: "https://mastodon.social/web/@emrhnpla02",
-        username: "@emrhnpla02@mastodon.social",
+        websiteIcon: "logos:twitter",
+        websiteHref: "https://twitter.com",
+        websiteName: "Twitter",
+        userHref: "https://twitter.com/emrhnpla02",
+        username: "@emrhnpla02",
       },
       {
         websiteIcon: "logos:reddit-icon",
