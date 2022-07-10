@@ -8,7 +8,7 @@ export default createStore({
       name: "Emirhan Pala",
       email: "emrhnpla02@proton.me",
       about:
-        "I'm a 16 year old Web Developer, Linux elitist who's interested in philosophy, music and nature.",
+        "I'm a 17 year old Web Developer, Linux elitist who's interested in philosophy, music and nature.",
     },
     links: [
       {
